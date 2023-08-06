@@ -1,0 +1,16 @@
+{% extends 'registration/base.html' %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-sm ">
+        {{ message|safe }}
+    </div>
+{% endfor %}
+{% endif %}
+<h1>{{user}}</h1>
+{{email}}
+<hr>
+<a href="{% url 'logout' %}" class="btn btn-warning">Logout</a>
+<a href="{% url 'password_change' %}" class="btn btn-info">Change Password</a>
+<a href="{% url 'home' %}" class="btn btn-success">Student Panel</a>
+{% endblock content %}

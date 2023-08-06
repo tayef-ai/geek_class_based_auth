@@ -1,0 +1,8 @@
+{% extends 'registration/base.html' %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{fm.as_p}}
+    <input type="submit" value="Update" class="btn btn-warning">
+</form>
+{% endblock content %}

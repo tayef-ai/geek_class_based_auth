@@ -1,0 +1,48 @@
+{% extends 'registration/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-4">
+        <h3 class="text-center alert alert-success">Add Data</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{fm.as_p}}
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+    </div>
+    <div class="col-sm-7 text-center offset-1">
+        <h4 class="alert alert-danger">Show Student Information</h4>
+        {% if st %}
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Edit/Delete</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for s in st %}
+              <tr>
+                <th scope="row">{{s.id}}</th>
+                <td>{{s.name}}</st></td>
+                <td>{{s.email}}</td>
+                <td><a href="{% url 'edit' s.id %}" class="btn btn-warning btn-sm">Edit</a>
+                  {% if perms.enroll.delete_post %}
+                <form action="{% url 'delete' s.id %}" class="d-inline" method="POST" onSubmit="if(!confirm('Are you sure?')){return false;}" >
+                    {% csrf_token %}
+                    <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                </form>
+                </td>
+              </tr>
+              {% endif %}
+                {% endfor %}
+              
+            </tbody>
+          </table>
+        {% else %}
+        <h5>No data</h5>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

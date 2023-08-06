@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Project</title>
+    <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.css' %}">
+</head>
+<body>
+    
+    <h1 class = "text-center alert alert-info">Django Model Form - CRUD Project</h1>
+    <div class="container mt-5">
+    {% block content %}
+      
+    {% endblock content %}
+    </div>
+    <script src="{% static 'enroll/js/bootstarp.js' %}"></script>
+    <script src="{% static 'enroll/js/project.js' %}"></script>
+</body>
+</html>
