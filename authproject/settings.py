@@ -133,7 +133,7 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'u17mcse008p@student.cuet.ac.bd'
-EMAIL_HOST_PASSWORD = '17mcse008P'
+EMAIL_HOST_PASSWORD = 'gffadsgadfsa'
 EMAIL_USE_TLS = True
 
 # print("=========",EMAIL_HOST_USER)
